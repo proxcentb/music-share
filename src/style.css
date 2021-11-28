@@ -1,5 +1,5 @@
 html {
-    font: 14px 'Helvetica Neue', arial, sans-serif;
+    font: 14px arial, sans-serif;
     height: 100%;
     -ms-overflow-style: none;
     min-width: 280px;
@@ -73,138 +73,138 @@ body {
 }
 
 .app > .modal > div {
-width: 600px;
-margin: 10px;
+    width: 600px;
+    margin: 10px;
 }
 
 .app > .modal > div ul {
-margin: 0;
+    margin: 0;
 }
 .app > .modal > div ul .tag {
-transform: scale(0.9);
-margin: 2px 0;
+    transform: scale(0.9);
+    margin: 2px 0;
 }
 
 .app > .tags {
-margin: 3px 5px;
+    margin: 3px 5px;
 }
 
 .app > .tags .tag {
-cursor: pointer;
-margin-right: 3px;
-margin-bottom: 3px;
-transition: 0.4s;
+    cursor: pointer;
+    margin-right: 3px;
+    margin-bottom: 3px;
+    transition: 0.4s;
 }
 
 .app > .navigation {
-align-self: center;
-margin: 3px 5px;
+    align-self: center;
+    margin: 3px 5px;
 }
 
 .app > .navigation button {
-border-radius: 50%;
-width: 30px;
-font-size: 12px;
-height: 30px;
-margin: 4px;
-background: rgb(230, 230, 230);
-color: grey;
-border: 1px solid;
-cursor: pointer;
+    border-radius: 50%;
+    width: 30px;
+    font-size: 12px;
+    height: 30px;
+    margin: 4px;
+    background: rgb(230, 230, 230);
+    color: grey;
+    border: 1px solid;
+    cursor: pointer;
 }
 
 .app > .navigation button:hover, .app > .navigation button.active {
-filter: brightness(0.8);
-transition: 0.3s;
+    filter: brightness(0.8);
+    transition: 0.3s;
 }
 
 .app > .videos {
-display: grid;
-justify-items: center;
-grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-grid-template-rows: repeat(auto-fill, 280px);
+    display: grid;
+    justify-items: center;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    grid-template-rows: repeat(auto-fill, 280px);
 }
 
 .app > .videos .video-wrapper {
-padding: 3px;
-box-sizing: border-box;
-width: 100%;
-height: 280px;
-display: flex;
-flex-direction: column;
-opacity: 0;
+    padding: 3px;
+    box-sizing: border-box;
+    width: 100%;
+    height: 280px;
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
 }
 
 .app > .videos .video-wrapper.loaded {
-opacity: 1;
-transition: 1s;
+    opacity: 1;
+    transition: 1s;
 }
 
 .app > .videos .video-wrapper .tags {
-display: flex;
-flex-wrap: wrap-reverse;
+    display: flex;
+    flex-wrap: wrap-reverse;
 }
 
 .app > .videos .video-wrapper .tags .tag {
-margin-top: 3px;
-margin-right: 3px;
+    margin-top: 3px;
+    margin-right: 3px;
 }
 
 .tag {
-color: white;
-display: inline-block;
-padding: 4px 10px;
-user-select: none;
+    color: white;
+    display: inline-block;
+    padding: 4px 10px;
+    user-select: none;
 }
 
 .tag.selected {
-box-shadow: 0 0 0 1px #00e73f inset, 0 0 5px 2px #00e73f;
-background-color: rgb(230, 230, 230);
-color: black;
+    box-shadow: 0 0 0 1px #00e73f inset, 0 0 5px 2px #00e73f;
+    background-color: rgb(230, 230, 230);
+    color: black;
 }
 
 .tag.deselected {
-box-shadow: 0 0 0 1px #ff0000 inset, 0 0 5px 2px #ff0000;
-background-color: black;
-color: white;
+    box-shadow: 0 0 0 1px #ff0000 inset, 0 0 5px 2px #ff0000;
+    background-color: black;
+    color: white;
 }
 
 iframe {
-height: 100%;
-width: 100%;
-background: rgba(230, 230, 230, 0.2);
-box-shadow: rgba(0, 0, 0, 0.6) 3px 3px 3px;
+    height: 100%;
+    width: 100%;
+    background: rgba(230, 230, 230, 0.2);
+    box-shadow: rgba(0, 0, 0, 0.6) 3px 3px 3px;
 }
 
 .emoji {
-margin-top: 4px;
-width: 40px;
-height: 40px;
+    margin-top: 4px;
+    width: 40px;
+    height: 40px;
 }
 
 .description {
-max-width: 200px;
+    max-width: 200px;
 }
 
 a:link {
-color: #6ea3ff;
+    color: #6ea3ff;
 }
 
 .above-all {
-z-index: 10;
+    z-index: 10;
 }
 
 .hidden-scroll {
-overflow: hidden;
+    overflow: hidden;
 }
 
 @media screen and (max-width: 400px) {
-.app > .videos {
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    grid-template-rows: repeat(auto-fill, 250px);
-}
+    .app > .videos {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        grid-template-rows: repeat(auto-fill, 250px);
+    }
 
-.app > .videos .video-wrapper {
-    height: 250px;
-}
+    .app > .videos .video-wrapper {
+        height: 250px;
+    }
 }

@@ -6,7 +6,7 @@ export const Emoji = ({ name, className: _className, ...restProps }) => {
   return (
     <>
       <br />
-      <img {...restProps} className={className} src={`../assets/emojis/${name}.png`} />
+      <img {...restProps} className={className} src={`./assets/emojis/${name}.png`} />
     </>
   );
 }
