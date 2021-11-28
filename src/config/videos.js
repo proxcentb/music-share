@@ -1,4 +1,8 @@
 import { Emoji, Description } from "./helpers";
+import iSee from '../assets/emojis/iSee.png';
+import PepeHands from '../assets/emojis/PepeHands.png';
+import Sadeg from '../assets/emojis/Sadeg.png';
+import monkaOMEGA from '../assets/emojis/monkaOMEGA.png';
 
 const rawVideos = [
   {
@@ -383,7 +387,7 @@ const rawVideos = [
     tags: ['инструментальная', 'спокойная', 'печальная', 'оркестровая'],
     description: (
       <Description>
-        Кто за нек(г)ров играл??? <Emoji name="iSee" />
+        Кто за нек(г)ров играл??? <Emoji src={iSee} />
       </Description>
     ),
   },
@@ -597,7 +601,7 @@ const rawVideos = [
     tags: ['инструментальная', 'sky mubs', 'печальная', 'спокойная'],
     description: (
       <Description>
-        Я плачу... <Emoji name="PepeHands" />
+        Я плачу... <Emoji src={PepeHands} />
       </Description>
     ),
   },
@@ -654,7 +658,7 @@ const rawVideos = [
     description: (
       <Description>
         Опенинг из <a target="_blank" href="https://shikimori.one/animes/2966-ookami-to-koushinryou">"Волчица и Пряности"</a>, 
-        моя самая первая анимешка... <Emoji name="Sadeg" />
+        моя самая первая анимешка... <Emoji src={Sadeg} />
       </Description>
     ),
   },
@@ -706,7 +710,7 @@ const rawVideos = [
     tags: ['инструментальная', 'оркестровая'],
     description: (
       <Description>
-        Страшна вырубай. <Emoji name="monkaOMEGA" />
+        Страшна вырубай. <Emoji src={monkaOMEGA} />
       </Description>
     ),
   },
@@ -844,7 +848,7 @@ const rawVideos = [
     tags: ['русская', 'печальная', 'панк', 'элизиум', 'хочется петь'],
     description: (
       <Description>
-        До слез... <Emoji name="PepeHands" />
+        До слез... <Emoji src={PepeHands} />
       </Description>
     ),
   },
