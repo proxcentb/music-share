@@ -90,8 +90,7 @@ body {
 }
 
 .app > .modal ol .tag {
-    transform: scale(0.9);
-    margin: 2px 0;
+    display: inline;
 }
 
 .app > .tags {

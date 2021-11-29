@@ -66,7 +66,7 @@ const Modal = memo(({ closeModal, setSkipIntroTrueToQuery }) => {
     <div className="modal outlined-text">
       <ol>
         <li><button onClick={() => toggleHighlightNode('navigationNode')}>Тут страницы</button></li>
-        <li><button onClick={() => toggleHighlightNode('tagsNode')}>Там теги</button></li>
+        <li><button onClick={() => toggleHighlightNode('tagsNode')}>Там теги</button> (и на всех видео тоже)</li>
         <li>У каждого тега есть 3 состояния: {exampleTags[0]} {exampleTags[1]} {exampleTags[2]}</li>
         <li>При наведении курсора на тег появляется небольшое описание.</li>
         <li>Можете менять состояние тега правой или левой кнопкой мыши.</li>
