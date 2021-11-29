@@ -1103,6 +1103,12 @@ const rawVideos = [
     description: null,
   },
   {
+    embedId: 'FccIhsqXzdk',
+    score: 87,
+    tags: ['русская', 'егор летов', 'панк', 'спокойная', 'грустная'],
+    description: null,
+  },
+  {
     embedId: 'osBPrU0k21s',
     score: 60,
     tags: ['русская', 'активная', 'веселая'],
@@ -1798,6 +1804,7 @@ let a = {
 "uifv1yxYcOU": "Riness - Ghosts of Memories - (feat. ミーウェル)",
 "uyL37Ox5Qxs": "The Dynasty",
 "vatcanQQJvQ": "Blue Zenith",
+"FccIhsqXzdk": "Далеко бежит дорога (Впереди веселья много)",
 }
 
 export const videos = rawVideos
