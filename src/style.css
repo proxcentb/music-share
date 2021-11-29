@@ -99,10 +99,8 @@ body {
 }
 
 .app > .tags .tag {
-    cursor: pointer;
     margin-right: 3px;
     margin-bottom: 3px;
-    transition: 0.4s;
 }
 
 .app > .navigation {
@@ -160,10 +158,12 @@ body {
 }
 
 .tag {
+    cursor: pointer;
     color: white;
     display: inline-block;
     padding: 4px 10px;
     user-select: none;
+    transition: 0.4s;
 }
 
 .tag.selected {

@@ -21,26 +21,15 @@ function getTagStyles(tagState, initialStyle, initialClassName) {
 const Tag = ({ name, description, tagState, style: initialStyle, className: initialClassName, ...restProps }) => {
   const { style, className } = getTagStyles(tagState, initialStyle, initialClassName);
   const children = <div {...restProps} style={style} className={className}>{name}</div>;
-  
-  return description
-    ? <WithTooltip content={description}>{children}</WithTooltip>
-    : children;
+  return description ? <WithTooltip content={description}>{children}</WithTooltip> : children;
 }
 
-const Video = ({ tags, description, embedId, title }) => {
+const Video = ({ tags, description, embedId, title, renderTag }) => {
   const ref = useRef(null);
+  useEffect(() => ref.current.classList.add('visible'), []);
   
-  useEffect(() => {
-    ref.current.classList.add('visible');
-  }, []);
-  
-  const descriptionNode = useMemo(() => {
-    return description !== null
-      ? <Tag {...getTagByName('ⓘ')} description={description} />
-      : <></>
-    }, [description]);
-  const tagsNodes = useMemo(() => tags.map(tag => <Tag key={tag.name} {...getTagByName(tag)} />), [tags]);
-
+  const descriptionNode = useMemo(() => description !== null ? <Tag {...getTagByName('ⓘ')} description={description} /> : <></>, [description]);
+  const tagsNodes = useMemo(() => tags.map(tag => renderTag(getTagByName(tag))), [tags, renderTag]);
   return (
     <div ref={ref} className="video-wrapper">
       <div className="tags">{[descriptionNode, ...tagsNodes]}</div>
@@ -49,45 +38,9 @@ const Video = ({ tags, description, embedId, title }) => {
   );
 }
 
-const Videos = memo(({ videos }) => {
-  return <div className="videos">{videos.map(video => <Video key={video.embedId} {...video} />)}</div>;
-})
-
-const Tags = memo(({ cycleTagState, tags }) => {
-  const renderTag = useCallback(tag => {
-    const { name } = tag;
-    const onContextMenu = (e) => {
-      e.preventDefault()
-      cycleTagState(name, -1);
-    }
-    const onClick = () => cycleTagState(name, 1);
-    
-    return <Tag {...tag} tagState={tags[name]} onClick={onClick} onContextMenu={onContextMenu} />;
-  }, [cycleTagState, tags]);
-  
-  const tagsNodes = useMemo(() => allTags.map(renderTag), [renderTag]);
-  
-  return <div className="tags">{tagsNodes}</div>;
-})
-
-const Navigation = memo(({ totalPages, activePage, setPage }) => {
-  const renderButton = useCallback(pageNumber => {
-    const isActive = pageNumber === activePage;
-    const onClick = () => setPage(pageNumber);
-    
-    return <button className={isActive ? 'active' : ''} onClick={onClick}>{pageNumber}</button>;
-  }, [activePage, setPage]);
-  
-  const buttonsNodes = useMemo(() => {
-    return Array.from(
-      { length: totalPages }, 
-      (_, i) => renderButton(i + 1),
-    );
-  }, [totalPages, renderButton]);
-  
-  return <div className="navigation">{buttonsNodes}</div>;
-})
-
+const Tags = memo(({ renderTag }) => <div className="tags">{allTags.map(renderTag)}</div>);
+const Navigation = memo(({ totalPages, activePage, setPage }) => <div className="navigation">{Array.from({ length: totalPages }, (_, i) => <button className={i + 1 === activePage ? 'active' : ''} onClick={() => setPage(i + 1)}>{i + 1}</button>)}</div>);
+const Videos = memo(({ videos, renderTag }) => <div className="videos">{videos.map(video => <Video key={video.embedId} {...video} renderTag={renderTag} />)}</div>)
 const Modal = memo(({ closeModal, setSkipIntroTrueToQuery }) => {
   const [ nodes, setNodes ] = useState(null);
   const toggleHighlightNode = useCallback((nodeName) => nodes[nodeName].classList.toggle('above-all'), [nodes]);
@@ -133,34 +86,27 @@ export default function App() {
   const pageSize = 12;
   const { page, setPage } = usePage();
   const { tags, cycleTagState } = useTags();
-  const { 
-    shouldShowModal, 
-    closeModal,
-    setSkipIntroTrueToQuery,
-  } = useModal();
+  const { shouldShowModal, closeModal, setSkipIntroTrueToQuery } = useModal();
   
-  useDidMountEffect(() => {
-    setPage(1);
-  }, [tags]);
+  useDidMountEffect(() => setPage(1), [tags]);
   
   const videosToDisplay = useMemo(() => getVideosByTags(tags), [tags]);
   const totalPages = useMemo(() => Math.ceil(videosToDisplay.length / pageSize), [pageSize, videosToDisplay.length]);
+  const videosToDisplayInPage = useMemo(() => videosToDisplay.filter((_, i) => pageSize * (page - 1) <= i && i < pageSize * page), [page, videosToDisplay]);
+  const renderTag = useCallback(tag => {
+    const { name } = tag;
+    const onContextMenu = (e) => { e.preventDefault(); cycleTagState(name, -1) }
+    const onClick = () => cycleTagState(name, 1);
+    return <Tag {...tag} key={name} tagState={tags[name]} onClick={onClick} onContextMenu={onContextMenu} />;
+  }, [cycleTagState, tags]);
   
-  const videosToDisplayInPage = useMemo(() => {
-    const startIndex = pageSize * (page - 1);
-    const endIndex = startIndex + pageSize;
-    const indexIsBetween = (_, i) => startIndex <= i && i < endIndex;
-
-    return videosToDisplay.filter(indexIsBetween);
-  }, [page, videosToDisplay]);
-
   return (
     <div className="app">
       <div className="background" />
       {shouldShowModal && <Modal closeModal={closeModal} setSkipIntroTrueToQuery={setSkipIntroTrueToQuery} />}
-      <Tags tags={tags} cycleTagState={cycleTagState} />
+      <Tags renderTag={renderTag} />
       <Navigation totalPages={totalPages} activePage={page} setPage={setPage} />
-      <Videos videos={videosToDisplayInPage} />
+      <Videos videos={videosToDisplayInPage} renderTag={renderTag} />
     </div>
 	);
 }
