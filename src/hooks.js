@@ -24,18 +24,34 @@ export function useDidMountEffect(func, deps) {
 }
 
 export function useModal() {
-  const { queryParams: { skipIntro: skipIntroQueryParam }, patchQueryParams } = useQueryParams(['skipIntro']);
+  const [ skipIntro, setSkipIntro ] = useStateWithLocalStorage('skipIntro');
 
-  const initialSkipIntro = useMemo(() => getBooleanFromString(skipIntroQueryParam), []);
-  const [shouldShowModal, setShouldShowModal] = useState(!initialSkipIntro);
+  const [shouldShowModal, setShouldShowModal] = useState(!skipIntro);
   const closeModal = useCallback(() => setShouldShowModal(false), []);
 
   const setSkipIntroTrueToQuery = useCallback(() => {
     setShouldShowModal(false);
-    patchQueryParams({ skipIntro: true });
+    setSkipIntro(true);
   }, [])
   
   return { shouldShowModal, closeModal, setSkipIntroTrueToQuery };
+}
+
+function useStateWithLocalStorage(identifier) {
+  const initialData = useMemo(() => {
+    const storageItem = localStorage.getItem(identifier);
+    return storageItem === null ? null : JSON.parse(storageItem);
+  }, []);
+
+  const [data, setData] = useState(initialData);
+
+  useDidMountEffect(() => {
+    data === null
+      ? localStorage.removeItem(identifier)
+      : localStorage.setItem(identifier, JSON.stringify(data));
+  }, [data]);
+
+  return [data, setData];
 }
 
 export function useTags() {
