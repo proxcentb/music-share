@@ -430,13 +430,13 @@ const rawVideos = [
   {
     embedId: 'yql9xh5UaIw',
     score: 62,
-    tags: ['английская', 'nomy', 'активная', 'грустная'],
+    tags: ['английская', 'nomy', 'активная', 'грустная', 'рок'],
     description: null,
   },
   {
     embedId: 'Bjadoqjdz2c',
     score: 80,
-    tags: ['английская', 'nomy', 'активная'],
+    tags: ['английская', 'nomy', 'активная', 'рок'],
     description: null,
   },
   {
