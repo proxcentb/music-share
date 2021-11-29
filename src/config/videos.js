@@ -1123,7 +1123,7 @@ const rawVideos = [
   {
     embedId: 'Sv6dMFF_yts',
     score: 88,
-    tags: ['английская', 'спокойная', 'спокойная', 'караоке'],
+    tags: ['английская', 'спокойная', 'караоке'],
     description: null,
   },
   {
