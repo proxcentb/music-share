@@ -55,7 +55,7 @@ const rawTags = [
     ),
   },
   {
-    name: 'хочется петь',
+    name: 'караоке',
     description: (
       <Description>
         С друзьями иногда в караоке ходим, это подборка для меня. <br /> <Emoji src={FeelsAmazingMan} />
