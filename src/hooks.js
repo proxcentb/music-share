@@ -28,13 +28,9 @@ export function useModal() {
 
   const [shouldShowModal, setShouldShowModal] = useState(!skipIntro);
   const closeModal = useCallback(() => setShouldShowModal(false), []);
-
-  const setSkipIntroTrueToQuery = useCallback(() => {
-    setShouldShowModal(false);
-    setSkipIntro(true);
-  }, [])
+  const setSkipIntroTrueToLocalStorage = useCallback(() => { setShouldShowModal(false); setSkipIntro(true)}, [])
   
-  return { shouldShowModal, closeModal, setSkipIntroTrueToQuery };
+  return { shouldShowModal, closeModal, setSkipIntroTrueToLocalStorage };
 }
 
 function useStateWithLocalStorage(identifier) {
@@ -64,9 +60,7 @@ export function useTags() {
     payload: prevState => ({ ...prevState, [tag]: getCycledTagState(prevState[tag], delta) }),
   }), [dispatchTags]);
   
-  useDidMountEffect(() => {
-    patchTagsQueryParams(getQueryParamsFromTags(tags));
-  }, [tags]);
+  useDidMountEffect(() => patchTagsQueryParams(getQueryParamsFromTags(tags)), [tags]);
   
   return { tags, cycleTagState };
 }
@@ -85,9 +79,7 @@ function useQueryParams(queryParamsNames) {
     [dispatchQueryParams]
   );
   
-  useDidMountEffect(() => {
-    history.pushState({}, '', getUrlWithUpdatedSearchParams(queryParams));
-  }, [queryParams]);
+  useDidMountEffect(() => history.pushState({}, '', getUrlWithUpdatedSearchParams(queryParams)), [queryParams]);
   
   return { queryParams, patchQueryParams };
 }
@@ -131,9 +123,7 @@ export function usePage() {
   const initialPage = useMemo(() => getPageFromQueryParam(pageQueryParam), []);
   const [page, setPage] = useState(initialPage);
 
-  useEffect(() => {
-    patchQueryParams({ page: String(page) });
-  }, [page]);
+  useEffect(() => patchQueryParams({ page: String(page) }), [page]);
 
   return { page, setPage };
 }

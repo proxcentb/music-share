@@ -49,7 +49,9 @@ const WithTooltip = ({ content, children }) => {
   useEffect(() => {
     const parent = parentRef.current;
     parent.addEventListener('mouseenter', () => setActive(true));
+    parent.addEventListener('touchstart', () => setActive(true));
     parent.addEventListener('mouseleave', () => setActive(false))
+    parent.addEventListener('touchend', () => setActive(false))
   }, []);
 
   return (
