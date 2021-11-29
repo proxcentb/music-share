@@ -44,7 +44,7 @@ body {
     color: white;
     flex-direction: column;
     position: absolute;
-    z-index: 2;
+    z-index: 3;
     width: 100vw;
     height: 100vh;
     background: rgba(0, 0, 0, 0.6);
@@ -55,6 +55,7 @@ body {
 }
 
 .app > .modal button {
+    font-size: 17px;
     padding: 6px;
     background-color: #FCFCFD;
     border-radius: 4px;
@@ -73,14 +74,22 @@ body {
 }
 
 .app > .modal > div {
+    display: flex;
+    justify-content: space-evenly;
     width: 600px;
     margin: 10px;
 }
 
-.app > .modal > div ul {
+.app > .modal ol {
     margin: 0;
 }
-.app > .modal > div ul .tag {
+
+.app > .modal ol li {
+    line-height: 30px;
+    margin: 5px;
+}
+
+.app > .modal ol .tag {
     transform: scale(0.9);
     margin: 2px 0;
 }
@@ -135,9 +144,9 @@ body {
     opacity: 0;
 }
 
-.app > .videos .video-wrapper.loaded {
+.app > .videos .video-wrapper.visible {
     opacity: 1;
-    transition: 1s;
+    transition: 2s;
 }
 
 .app > .videos .video-wrapper .tags {
@@ -167,13 +176,6 @@ body {
     box-shadow: 0 0 0 1px #ff0000 inset, 0 0 5px 2px #ff0000;
     background-color: black;
     color: white;
-}
-
-iframe {
-    height: 100%;
-    width: 100%;
-    background: rgba(230, 230, 230, 0.2);
-    box-shadow: rgba(0, 0, 0, 0.6) 3px 3px 3px;
 }
 
 .emoji {

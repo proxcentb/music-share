@@ -43,24 +43,22 @@ export function useTags() {
   
   const initialTags = useMemo(() => getTagsFromQueryParams(tagsQueryParams), []);
   const [tags, dispatchTags] = useReducer(defaultReducer, initialTags);
-  const toggleTag = useCallback((tag) => dispatchTags({ 
+  const cycleTagState = useCallback((tag, delta) => dispatchTags({ 
     type: 'customFn', 
-    payload: prevState => ({ ...prevState, [tag]: getNextTagState(prevState[tag]) }),
+    payload: prevState => ({ ...prevState, [tag]: getCycledTagState(prevState[tag], delta) }),
   }), [dispatchTags]);
   
   useDidMountEffect(() => {
     patchTagsQueryParams(getQueryParamsFromTags(tags));
   }, [tags]);
   
-  return { tags, toggleTag };
+  return { tags, cycleTagState };
 }
 
-function getNextTagState(prevState) {
-  switch(prevState) {
-    case true: return false;
-    case false: return null
-    case null: return true;
-  }
+function getCycledTagState(prevState, delta) {
+  const states = [null, true, false];
+  const prevStateIndex = states.findIndex(state => state === prevState);
+  return states[(((prevStateIndex + delta) % states.length) + states.length) % states.length];
 }
 
 function useQueryParams(queryParamsNames) {

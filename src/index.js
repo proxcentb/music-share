@@ -1,19 +1,16 @@
 import WithTooltip from './Tooltip';
-import {tags as allTags, getTagByName, getModifiedTag} from "./config/tags";
+import YoutubeEmbed from './YoutubeEmbed';
+import { tags as allTags, getTagByName, getModifiedTag } from "./config/tags";
 import { getVideosByTags } from "./config/videos";
-import { useCallback, useEffect, useMemo, useState } from "preact/hooks";
+import { useCallback, useRef, useEffect, useMemo, useState } from "preact/hooks";
 import { useTags, usePage, useDidMountEffect, useModal } from "./hooks";
 import { memo } from "preact/compat";
 import "./style";
 
 function getTagStyles(tagState, initialStyle, initialClassName) {
   switch(tagState) {
-    case true: return {
-      className: `tag selected ${initialClassName ?? ''}`,
-    };
-    case false: return {
-      className: `tag deselected ${initialClassName ?? ''}`,
-    };
+    case true: return { className: `tag selected ${initialClassName ?? ''}` };
+    case false: return { className: `tag deselected ${initialClassName ?? ''}` };
     default: return {
       style: initialStyle ?? {},
       className: `tag ${initialClassName ?? ''}`,
@@ -21,26 +18,7 @@ function getTagStyles(tagState, initialStyle, initialClassName) {
   }
 }
 
-const YoutubeEmbed = ({ embedId, onLoad }) => (
-  <iframe
-    src={`https://www.youtube.com/embed/${embedId}`}
-    onLoad={onLoad}
-    width="100%"
-    height="100%"
-    frameBorder="0"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-    allowFullScreen
-  />
-)
-
-const Tag = ({ 
-  name,
-  description,
-  tagState,
-  style: initialStyle,
-  className: initialClassName,
-  ...restProps
-}) => {
+const Tag = ({ name, description, tagState, style: initialStyle, className: initialClassName, ...restProps }) => {
   const { style, className } = getTagStyles(tagState, initialStyle, initialClassName);
   const children = <div {...restProps} style={style} className={className}>{name}</div>;
   
@@ -49,58 +27,43 @@ const Tag = ({
     : children;
 }
 
-const Video = ({ tags, description, embedId, onLoad: _onLoad }) => {
-  const [loaded, setLoaded] = useState(false);
-  const onLoad = useCallback(() => {
-    setLoaded(true);
-    _onLoad();
-  }, [_onLoad]);
-
+const Video = ({ tags, description, embedId, title }) => {
+  const ref = useRef(null);
+  
+  useEffect(() => {
+    ref.current.classList.add('visible');
+  }, []);
+  
   const descriptionNode = useMemo(() => {
     return description !== null
       ? <Tag {...getTagByName('ⓘ')} description={description} />
       : <></>
     }, [description]);
-  const tagsNodes = useMemo(() => tags.map(tag => <Tag {...getTagByName(tag)} />), [tags]);
+  const tagsNodes = useMemo(() => tags.map(tag => <Tag key={tag.name} {...getTagByName(tag)} />), [tags]);
 
   return (
-    <div className={`video-wrapper ${loaded ? 'loaded' : ''}`}>
+    <div ref={ref} className="video-wrapper">
       <div className="tags">{[descriptionNode, ...tagsNodes]}</div>
-      <YoutubeEmbed embedId={embedId} onLoad={onLoad} />
+      <YoutubeEmbed embedId={embedId} title={title} />
     </div>
   );
 }
 
 const Videos = memo(({ videos }) => {
-  const [videosToDisplay, setVideosToDisplay] = useState(videos[0] ? [videos[0]] : []);
-
-  const loadVideo = useCallback((index) => {
-    if (index < videos.length) 
-      setVideosToDisplay(prevState => [...prevState, videos[index]]);
-  }, [videos]);
-  
-  const renderVideo = useCallback((video, index) => {
-    return <Video {...video} key={index} onLoad={() => loadVideo(index + 1)} />
-  }, [loadVideo]);
-  
-  const videosToDisplayNodes = useMemo(() => videosToDisplay.map(renderVideo), [videosToDisplay, renderVideo]);
-
-  useDidMountEffect(() => {
-    // workaround to LOAD first video, not replace it
-    setVideosToDisplay([]);
-    setTimeout(() => setVideosToDisplay(videos[0] ? [videos[0]] : []), 1);
-  }, [videos]);
-  
-  return <div className="videos">{videosToDisplayNodes}</div>;
+  return <div className="videos">{videos.map(video => <Video key={video.embedId} {...video} />)}</div>;
 })
 
-const Tags = memo(({ toggleTag, tags }) => {
+const Tags = memo(({ cycleTagState, tags }) => {
   const renderTag = useCallback(tag => {
     const { name } = tag;
-    const onClick = () => toggleTag(name);
+    const onContextMenu = (e) => {
+      e.preventDefault()
+      cycleTagState(name, -1);
+    }
+    const onClick = () => cycleTagState(name, 1);
     
-    return <Tag {...tag} tagState={tags[name]} onClick={onClick} />;
-  }, [toggleTag, tags]);
+    return <Tag {...tag} tagState={tags[name]} onClick={onClick} onContextMenu={onContextMenu} />;
+  }, [cycleTagState, tags]);
   
   const tagsNodes = useMemo(() => allTags.map(renderTag), [renderTag]);
   
@@ -140,48 +103,28 @@ const Modal = memo(({ closeModal, setSkipIntroTrueToQuery }) => {
     return () => bodyNode.classList.remove('hidden-scroll');
   }, []);
 
-  const exampleTags = [
-    { name: 'активное', description: 'активное состояние', tagState: true },
-    { name: 'неактивное', description: 'неактивное состояние', tagState: false },
-    { name: 'нейтральное', description: 'нейтральное состояние', tagState: null },
-  ].map(tag => <Tag {...getModifiedTag(tag)} />);
+  const exampleTags = useMemo(() => [
+    { name: 'активное', description: 'только видео с этим тегом будут появляться', tagState: true },
+    { name: 'неактивное', description: 'все видео с такими тегом не будут появляться', tagState: false },
+    { name: 'нейтральное', description: 'изначальное состояние, не влияет на что-либо', tagState: null },
+  ].map(tag => <Tag {...getModifiedTag(tag)} />), []);
   
   return (
     <div className="modal outlined-text">
+      <ol>
+        <li><button onClick={() => toggleHighlightNode('navigationNode')}>Тут страницы</button></li>
+        <li><button onClick={() => toggleHighlightNode('tagsNode')}>Там теги</button></li>
+        <li>У каждого тега есть 3 состояния: {exampleTags[0]} {exampleTags[1]} {exampleTags[2]}</li>
+        <li>При наведении курсора на тег появляется небольшое описание.</li>
+        <li>Можете менять состояние тега правой или левой кнопкой мыши.</li>
+        <li>Разделение на теги субъективно, не надо бить автора за это.</li>
+        <li>Чем больше музыка мне нравится, тем первее она в списке (по идее).</li>
+        <li>Весь контент актуален на 28 ноября 2021.</li>
+      </ol>
       <div>
-        Здесь предоставлена музыка, которая мне нравится. <br />
-        Точно не вся, но, по крайней мере, большая ее часть.
+        <button onClick={closeModal}>Понял, принял.</button>
+        <button onClick={setSkipIntroTrueToQuery}>Хватит показывать это сообщение!</button>
       </div>
-      <div>
-        На каждой странице показывается максимум 12 видео. <br />
-        Перейти на другие страницы можно <button onClick={() => toggleHighlightNode('navigationNode')}>здесь</button>.
-      </div>
-      <div>
-        У большинства видео есть <button onClick={() => toggleHighlightNode('tagsNode')}>теги</button>, которые как-то его описывают. <br /> 
-        Разделение на теги субъективно, не надо бить автора за это. <br />
-        При наведении курсора на тег появляется небольшое описание. <br />
-        У каждого тега есть 3 состояния:
-        <ul>
-          <li>{exampleTags[0]}, тогда только видео с этим тегом будут появляться.</li>
-          <li>{exampleTags[1]}, тогда все видео с такими тегом не будут появляться.</li>
-          <li>{exampleTags[2]} (изначальное состояние), это не влияет на что-либо.</li>
-        </ul>
-        Нажмите на тег, чтобы изменить его состояние.
-      </div>
-      <div>
-        Чем больше музыка мне нравится, тем первее она в списке. <br />
-        Порядок может не точно отражать мои предпочтения, но примерное представление получить можно.
-      </div>
-      <div>
-        Страница и все выбранные теги сохраняются в строку запроса. <br />
-        Надоело видеть эту информацию при первоначальной загрузке страницы? <br /> 
-        - Добавьте <code>&skipIntro=true</code> к строке запроса или нажмите <button onClick={setSkipIntroTrueToQuery}>здесь</button>.
-      </div>
-      <div>
-        Весь контент актуален на 28 ноября 2021. <br />
-        Поскольку все видео и теги захардкожены в файлах, мне будет лень обновлять и добавлять сюда что-то новое.
-      </div>
-      <button onClick={closeModal}>Понял, принял.</button>
     </div>
   );
 })
@@ -189,7 +132,7 @@ const Modal = memo(({ closeModal, setSkipIntroTrueToQuery }) => {
 export default function App() {
   const pageSize = 12;
   const { page, setPage } = usePage();
-  const { tags, toggleTag } = useTags();
+  const { tags, cycleTagState } = useTags();
   const { 
     shouldShowModal, 
     closeModal,
@@ -215,7 +158,7 @@ export default function App() {
     <div className="app">
       <div className="background" />
       {shouldShowModal && <Modal closeModal={closeModal} setSkipIntroTrueToQuery={setSkipIntroTrueToQuery} />}
-      <Tags tags={tags} toggleTag={toggleTag} />
+      <Tags tags={tags} cycleTagState={cycleTagState} />
       <Navigation totalPages={totalPages} activePage={page} setPage={setPage} />
       <Videos videos={videosToDisplayInPage} />
     </div>
