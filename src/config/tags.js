@@ -11,6 +11,7 @@ import monkaMEGA from '../assets/emojis/monkaMEGA.png';
 import roflanEbalo from '../assets/emojis/roflanEbalo.png';
 import peepoGlad from '../assets/emojis/peepoGlad.png';
 import TrollDespair from '../assets/emojis/TrollDespair.png';
+import Trollge from '../assets/emojis/Trollge.png';
 
 const rawTags = [
   {
@@ -57,7 +58,7 @@ const rawTags = [
     name: 'хочется петь',
     description: (
       <Description>
-        С друзьями иногда в караоке ходим, это подборка для меня. <Emoji src={FeelsAmazingMan} />
+        С друзьями иногда в караоке ходим, это подборка для меня. <br /> <Emoji src={FeelsAmazingMan} />
       </Description>
     ),
   },
@@ -65,7 +66,7 @@ const rawTags = [
     name: 'грустная',
     description: (
       <Description>
-        Усугубляет тоску... <Emoji src={FeelsHangMan} />
+        Усугубляет тоску... <br /> <Emoji src={FeelsHangMan} />
       </Description>
     ),
   },
@@ -73,7 +74,7 @@ const rawTags = [
     name: 'веселая',
     description: (
       <Description>
-        Поднимает настроение! <Emoji src={FeelsOkayMan} />
+        Поднимает настроение! <br /> <Emoji src={FeelsOkayMan} />
       </Description>
     ),
   },
@@ -89,7 +90,7 @@ const rawTags = [
     name: 'активная',
     description: (
       <Description>
-        Часто хочется слушать подобное; больше энергии появляется! <Emoji src={SwoleDoge} />
+        Часто хочется слушать подобное; больше энергии появляется! <br /> <Emoji src={SwoleDoge} />
       </Description>
     ),
   },
@@ -97,7 +98,7 @@ const rawTags = [
     name: 'вокалоид',
     description: (
       <Description>
-        Песенки миленькие, как и персонажи. <Emoji src={AYAYA} />
+        Песенки миленькие, как и персонажи. <br /> <Emoji src={AYAYA} />
       </Description>
     ),
   },
@@ -113,7 +114,7 @@ const rawTags = [
     name: 'панк',
     description: (
       <Description>
-        Друг подсадил... <Emoji src={wojakWithered} />
+        Друг подсадил... <br /> <Emoji src={wojakWithered} />
       </Description>
     ),
   },
@@ -129,7 +130,7 @@ const rawTags = [
     name: 'электронная',
     description: (
       <Description>
-        Скорее всего долбежка. <Emoji src={ChadYes} />
+        Скорее всего долбежка. <br /> <Emoji src={ChadYes} />
       </Description>
     ),
   },
@@ -137,7 +138,7 @@ const rawTags = [
     name: 'хардкор/спидкор',
     description: (
       <Description>
-        Скорее всего <b>нереальная</b> долбежка. <Emoji src={ChadYes} />
+        Скорее всего <b>нереальная</b> долбежка. <br /> <Emoji src={ChadYes} />
       </Description>
     ),
   },
@@ -145,7 +146,7 @@ const rawTags = [
     name: 'кельтская',
     description: (
       <Description>
-        Скрипка, флейта, барабаны, волынка, арфа... Очень приятно для слуха. <Emoji src={FeelsOkayMan} />
+        Скрипка, флейта, барабаны, волынка, арфа... Очень приятно для слуха. <br /> <Emoji src={FeelsOkayMan} />
       </Description>
     ),
   },
@@ -161,7 +162,7 @@ const rawTags = [
     name: 'классическая',
     description: (
       <Description>
-        Здесь я имею ввиду не только классику, но и музыку, похожую на нее. <Emoji src={EZY} />
+        Здесь я имею ввиду не только классику, но и музыку, похожую на нее. <br /> <Emoji src={EZY} />
       </Description>
     ),
   },
@@ -177,7 +178,7 @@ const rawTags = [
     name: 'ICCD',
     description: (
       <Description>
-        Imperial Circus Dead Decadence. Метал группа. <Emoji src={monkaMEGA} />
+        Imperial Circus Dead Decadence. Метал группа. <br /> <Emoji src={monkaMEGA} />
       </Description>
     ),
   },
@@ -185,7 +186,7 @@ const rawTags = [
     name: 'akatsuki records',
     description: (
       <Description>
-        Японская группа, необычный голос у вокалистки. <Emoji src={roflanEbalo} />
+        Японская группа, необычный голос у вокалистки. <br /> <Emoji src={roflanEbalo} />
       </Description>
     ),
   },
@@ -209,7 +210,7 @@ const rawTags = [
     name: 'love solfege',
     description: (
       <Description>
-        Уникальный стиль. Очень круто! <Emoji src={peepoGlad} />
+        Уникальный стиль. Очень круто! <br /> <Emoji src={peepoGlad} />
       </Description>
     ),
   },
@@ -281,7 +282,7 @@ const rawTags = [
     name: 'король и шут',
     description: (
       <Description>
-        Классика. <Emoji src={TrollDespair} />
+        <Emoji src={Trollge} />
       </Description>
     ),
   },
@@ -289,7 +290,7 @@ const rawTags = [
     name: 'егор летов',
     description: (
       <Description>
-        Классика, сам пою... <Emoji src={TrollDespair} />
+        <Emoji src={TrollDespair} />
       </Description>
     ),
   },

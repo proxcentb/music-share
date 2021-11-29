@@ -27,7 +27,7 @@ const WithTooltip = ({ content, children }) => {
   }, []);
   
   const startTimeout = useCallback(() => {
-    const id = setTimeout(setPosition, 700);
+    const id = setTimeout(setPosition, 600);
     setTimeoutId(id);
   }, []);
   

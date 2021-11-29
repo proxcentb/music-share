@@ -387,7 +387,7 @@ const rawVideos = [
     tags: ['инструментальная', 'спокойная', 'грустная', 'оркестровая'],
     description: (
       <Description>
-        Кто за нек(г)ров играл??? <Emoji src={iSee} />
+        Кто за нек(г)ров играл??? <br /> <Emoji src={iSee} />
       </Description>
     ),
   },
@@ -601,7 +601,7 @@ const rawVideos = [
     tags: ['инструментальная', 'sky mubs', 'грустная', 'спокойная'],
     description: (
       <Description>
-        Я плачу... <Emoji src={PepeHands} />
+        Я плачу... <br /> <Emoji src={PepeHands} />
       </Description>
     ),
   },
@@ -658,7 +658,7 @@ const rawVideos = [
     description: (
       <Description>
         Опенинг из <a target="_blank" href="https://shikimori.one/animes/2966-ookami-to-koushinryou">"Волчица и Пряности"</a>, 
-        моя самая первая анимешка... <Emoji src={Sadeg} />
+        моя самая первая анимешка... <br /> <Emoji src={Sadeg} />
       </Description>
     ),
   },
@@ -710,7 +710,7 @@ const rawVideos = [
     tags: ['инструментальная', 'оркестровая'],
     description: (
       <Description>
-        Страшна вырубай. <Emoji src={monkaOMEGA} />
+        Страшна вырубай. <br /> <Emoji src={monkaOMEGA} />
       </Description>
     ),
   },
@@ -848,7 +848,7 @@ const rawVideos = [
     tags: ['русская', 'грустная', 'панк', 'элизиум', 'хочется петь'],
     description: (
       <Description>
-        До слез... <Emoji src={PepeHands} />
+        До слез... <br /> <Emoji src={PepeHands} />
       </Description>
     ),
   },
@@ -861,7 +861,7 @@ const rawVideos = [
   {
     embedId: 'QP0nAYAPAqM',
     score: 80,
-    tags: ['русская', 'король и шут', 'панк', 'активная', 'хочется петь'],
+    tags: ['русская', 'король и шут', 'панк', 'активная', 'хочется петь', 'веселая'],
     description: null,
   },
   {
@@ -1399,7 +1399,7 @@ const rawVideos = [
   {
     embedId: 'RQzUQ291l_c',
     score: 82,
-    tags: ['русская', 'панк', 'король и шут'],
+    tags: ['русская', 'панк', 'король и шут', 'веселая'],
     description: null,
   },
   {
