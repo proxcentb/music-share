@@ -62,7 +62,7 @@ const rawTags = [
     ),
   },
   {
-    name: 'печальная',
+    name: 'грустная',
     description: (
       <Description>
         Усугубляет тоску... <Emoji src={FeelsHangMan} />
@@ -70,7 +70,7 @@ const rawTags = [
     ),
   },
   {
-    name: 'жизнеутверждающая',
+    name: 'веселая',
     description: (
       <Description>
         Поднимает настроение! <Emoji src={FeelsOkayMan} />

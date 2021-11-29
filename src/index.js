@@ -28,7 +28,7 @@ const Video = ({ tags, description, embedId, title, renderTag }) => {
   const ref = useRef(null);
   useEffect(() => ref.current.classList.add('visible'), []);
   
-  const descriptionNode = useMemo(() => description !== null ? <Tag {...getTagByName('ⓘ')} description={description} /> : <></>, [description]);
+  const descriptionNode = useMemo(() => description !== null ? renderTag({...getTagByName('ⓘ'), description}) : <></>, [description, renderTag]);
   const tagsNodes = useMemo(() => tags.map(tag => renderTag(getTagByName(tag))), [tags, renderTag]);
   return (
     <div ref={ref} className="video-wrapper">

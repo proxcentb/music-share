@@ -8,19 +8,19 @@ const rawVideos = [
   {
     embedId: 'va810QKC1S0',
     score: 58, 
-    tags: ['инструментальная', 'печальная', 'спокойная', 'классическая'],
+    tags: ['инструментальная', 'грустная', 'спокойная', 'классическая'],
     description: null,
   },
   {
     embedId: '2Od7QCsyqkE',
     score: 71,
-    tags: ['японская', 'активная', 'жизнеутверждающая'],
+    tags: ['японская', 'активная', 'веселая'],
     description: null,
   },
   {
     embedId: 'mcywsWmHEVc',
     score: 89,
-    tags: ['японская', 'жизнеутверждающая', 'спокойная'],
+    tags: ['японская', 'веселая', 'спокойная'],
     description: null,
   },
   {
@@ -44,7 +44,7 @@ const rawVideos = [
   {
     embedId: '7EEUU-yIN5c',
     score: 76,
-    tags: ['японская', 'вокалоид', 'жизнеутверждающая', 'активная'],
+    tags: ['японская', 'вокалоид', 'веселая', 'активная'],
     description: null,
   },
   {
@@ -56,7 +56,7 @@ const rawVideos = [
   {
     embedId: 'k-3y2LVF_SE',
     score: 100,
-    tags: ['инструментальная', 'xi', 'электронная', 'активная', 'жизнеутверждающая', 'хардкор/спидкор'],
+    tags: ['инструментальная', 'xi', 'электронная', 'активная', 'веселая', 'хардкор/спидкор'],
     description: (
       <Description>
         Узнал из osu!, можно сказать, что это гимн этой игры для меня.
@@ -80,7 +80,7 @@ const rawVideos = [
   {
     embedId: 'lvRw5Kjx31o',
     score: 68,
-    tags: ['японская', 'жизнеутверждающая'],
+    tags: ['японская', 'веселая'],
     description: null,
   },
   {
@@ -92,7 +92,7 @@ const rawVideos = [
   {
     embedId: 'BgQ8sa0HPtQ',
     score: 80,
-    tags: ['японская', 'жизнеутверждающая', 'активная', 'кельтская', 'akatsuki records'],
+    tags: ['японская', 'веселая', 'активная', 'кельтская', 'akatsuki records'],
     description: (
       <Description>
         Очень прикольная и уникальная песня.
@@ -102,7 +102,7 @@ const rawVideos = [
   {
     embedId: 'q-v-a-NFH-Q',
     score: 77,
-    tags: ['английская', 'жизнеутверждающая', 'активная'],
+    tags: ['английская', 'веселая', 'активная'],
     description: null,
   },
   {
@@ -114,7 +114,7 @@ const rawVideos = [
   {
     embedId: 'Sq_q5MIIYX4',
     score: 67,
-    tags: ['инструментальная', 'активная', 'жизнеутверждающая', 'кельтская'],
+    tags: ['инструментальная', 'активная', 'веселая', 'кельтская'],
     description: null,
   },
   {
@@ -132,7 +132,7 @@ const rawVideos = [
   {
     embedId: 'EJYKsY0Vcts',
     score: 81,
-    tags: ['японская', 'жизнеутверждающая'],
+    tags: ['японская', 'веселая'],
     description: null,
   },
   {
@@ -144,7 +144,7 @@ const rawVideos = [
   {
     embedId: 'f3ESZSrKvkI',
     score: 70,
-    tags: ['инструментальная', 'phyxinon', 'печальная', 'классическая'],
+    tags: ['инструментальная', 'phyxinon', 'грустная', 'классическая'],
     description: null,
   },
   {
@@ -156,7 +156,7 @@ const rawVideos = [
   {
     embedId: 'HLD_T_TCv-w',
     score: 92,
-    tags: ['инструментальная', 'печальная', 'активная', 'оркестровая'],
+    tags: ['инструментальная', 'грустная', 'активная', 'оркестровая'],
     description: null,
   },
   {
@@ -180,7 +180,7 @@ const rawVideos = [
   {
     embedId: 'srhni4w2TbI',
     score: 80,
-    tags: ['японская', 'активная', 'жизнеутверждающая'],
+    tags: ['японская', 'активная', 'веселая'],
     description: null,
   },
   {
@@ -198,7 +198,7 @@ const rawVideos = [
   {
     embedId: '6IkuV_lZtiI',
     score: 80,
-    tags: ['инструментальная', 'печальная', 'спокойная', 'оркестровая'],
+    tags: ['инструментальная', 'грустная', 'спокойная', 'оркестровая'],
     description: null,
   },
   {
@@ -210,19 +210,19 @@ const rawVideos = [
   {
     embedId: 'aEHxqBHCkFc',
     score: 86,
-    tags: ['японская', 'активная', 'жизнеутверждающая'],
+    tags: ['японская', 'активная', 'веселая'],
     description: null,
   },
   {
     embedId: 'UWwzmed9Z5U',
     score: 76,
-    tags: ['японская', 'жизнеутверждающая', 'активная'],
+    tags: ['японская', 'веселая', 'активная'],
     description: null,
   },
   {
     embedId: 'XbRPOR19p_c',
     score: 68,
-    tags: ['японская', 'активная', 'жизнеутверждающая'],
+    tags: ['японская', 'активная', 'веселая'],
     description: (
       <Description>
         Очень нравится часть с 0:58.
@@ -232,13 +232,13 @@ const rawVideos = [
   {
     embedId: 'U1oeOZVtA84',
     score: 80,
-    tags: ['японская', 'вокалоид', 'жизнеутверждающая', 'активная'],
+    tags: ['японская', 'вокалоид', 'веселая', 'активная'],
     description: null,
   },
   {
     embedId: 'oozQ4yV__Vw',
     score: 86,
-    tags: ['английская', 'активная', 'жизнеутверждающая'],
+    tags: ['английская', 'активная', 'веселая'],
     description: (
       <Description>
         Скорее всего, это песня была дольше всех других в моем плейлисте.
@@ -260,13 +260,13 @@ const rawVideos = [
   {
     embedId: 'JxFUY7Ka8e0',
     score: 90,
-    tags: ['японская', 'спокойная', 'жизнеутверждающая'],
+    tags: ['японская', 'спокойная', 'веселая'],
     description: null,
   },
   {
     embedId: 'eJhCAnjz8ZA',
     score: 74,
-    tags: ['японская', 'вокалоид', 'жизнеутверждающая', 'активная'],
+    tags: ['японская', 'вокалоид', 'веселая', 'активная'],
     description: null,
   },
   {
@@ -366,7 +366,7 @@ const rawVideos = [
   {
     embedId: '4oPM8zTeois',
     score: 70,
-    tags: ['инструментальная', 'печальная', 'спокойная', 'phyxinon', 'классическая'],
+    tags: ['инструментальная', 'грустная', 'спокойная', 'phyxinon', 'классическая'],
     description: null,
   },
   {
@@ -378,13 +378,13 @@ const rawVideos = [
   {
     embedId: 'IB1URcYIaOE',
     score: 80,
-    tags: ['английская', 'печальная', 'спокойная'],
+    tags: ['английская', 'грустная', 'спокойная'],
     description: null,
   },
   {
     embedId: 'xHq-TEluOrM',
     score: 84,
-    tags: ['инструментальная', 'спокойная', 'печальная', 'оркестровая'],
+    tags: ['инструментальная', 'спокойная', 'грустная', 'оркестровая'],
     description: (
       <Description>
         Кто за нек(г)ров играл??? <Emoji src={iSee} />
@@ -394,19 +394,19 @@ const rawVideos = [
   {
     embedId: 'qO8AoYPnr68',
     score: 69,
-    tags: ['печальная', 'спокойная', 'оркестровая'],
+    tags: ['грустная', 'спокойная', 'оркестровая'],
     description: null,
   },
   {
     embedId: '-RAeuWxOif4',
     score: 88,
-    tags: ['японская', 'жизнеутверждающая', 'активная', 'электронная', 'вокалоид'],
+    tags: ['японская', 'веселая', 'активная', 'электронная', 'вокалоид'],
     description: null,
   },
   {
     embedId: 'zycqjvKFiHU',
     score: 89,
-    tags: ['японская', 'спокойная', 'жизнеутверждающая'],
+    tags: ['японская', 'спокойная', 'веселая'],
     description: null,
   },
   {
@@ -418,19 +418,19 @@ const rawVideos = [
   {
     embedId: 'pTRgr9IWLnY',
     score: 76,
-    tags: ['yuki kajiura', 'спокойная', 'печальная'],
+    tags: ['yuki kajiura', 'спокойная', 'грустная'],
     description: null,
   },
   {
     embedId: 'by_dL99tndw',
     score: 83,
-    tags: ['японская', 'вокалоид', 'жизнеутверждающая', 'спокойная'],
+    tags: ['японская', 'вокалоид', 'веселая', 'спокойная'],
     description: null,
   },
   {
     embedId: 'yql9xh5UaIw',
     score: 62,
-    tags: ['английская', 'nomy', 'активная', 'печальная'],
+    tags: ['английская', 'nomy', 'активная', 'грустная'],
     description: null,
   },
   {
@@ -442,7 +442,7 @@ const rawVideos = [
   {
     embedId: '5nReJMJGrRE',
     score: 84,
-    tags: ['инструментальная', 'yuki kajiura', 'спокойная', 'печальная'],
+    tags: ['инструментальная', 'yuki kajiura', 'спокойная', 'грустная'],
     description: null,
   },
   {
@@ -454,25 +454,25 @@ const rawVideos = [
   {
     embedId: 'fr26k_KusS4',
     score: 70,
-    tags: ['японская', 'активная', 'жизнеутверждающая'],
+    tags: ['японская', 'активная', 'веселая'],
     description: null,
   },
   {
     embedId: 'cOe9RPqg1GE',
     score: 84,
-    tags: ['японская', 'активная', 'жизнеутверждающая'],
+    tags: ['японская', 'активная', 'веселая'],
     description: null,
   },
   {
     embedId: 'nSDgHBxUbVQ',
     score: 81,
-    tags: ['английская', 'печальная', 'спокойная'],
+    tags: ['английская', 'грустная', 'спокойная'],
     description: null,
   },
   {
     embedId: 'M92c6pl10u0',
     score: 78,
-    tags: ['японская', 'вокалоид', 'жизнеутверждающая', 'активная', 'электронная'],
+    tags: ['японская', 'вокалоид', 'веселая', 'активная', 'электронная'],
     description: null,
   },
   {
@@ -484,43 +484,43 @@ const rawVideos = [
   {
     embedId: 'XTedaWpPjto',
     score: 80,
-    tags: ['английская', 'активная', 'жизнеутверждающая'],
+    tags: ['английская', 'активная', 'веселая'],
     description: null,
   },
   {
     embedId: '_4BLiOP1aaY',
     score: 68,
-    tags: ['японская', 'жизнеутверждающая'],
+    tags: ['японская', 'веселая'],
     description: null,
   },
   {
     embedId: 'BG746QmRgqk',
     score: 90,
-    tags: ['японская', 'rigël theatre', 'кельтская', 'жизнеутверждающая'],
+    tags: ['японская', 'rigël theatre', 'кельтская', 'веселая'],
     description: null,
   },
   {
     embedId: '_IY95itIKis',
     score: 90,
-    tags: ['японская', 'rigël theatre', 'кельтская', 'жизнеутверждающая'],
+    tags: ['японская', 'rigël theatre', 'кельтская', 'веселая'],
     description: null,
   },
   {
     embedId: 'pV1DT5JlRlc',
     score: 91,
-    tags: ['инструментальная', 'rigël theatre', 'кельтская', 'жизнеутверждающая', 'спокойная'],
+    tags: ['инструментальная', 'rigël theatre', 'кельтская', 'веселая', 'спокойная'],
     description: null,
   },
   {
     embedId: 'kv4UD4ICd_0',
     score: 93,
-    tags: ['инструментальная', 'rigël theatre', 'кельтская', 'жизнеутверждающая', 'спокойная'],
+    tags: ['инструментальная', 'rigël theatre', 'кельтская', 'веселая', 'спокойная'],
     description: null,
   },
   {
     embedId: '-I--cdqDbdU',
     score: 89,
-    tags: ['инструментальная', 'rigël theatre', 'кельтская', 'жизнеутверждающая', 'спокойная'],
+    tags: ['инструментальная', 'rigël theatre', 'кельтская', 'веселая', 'спокойная'],
     description: null,
   },
   {
@@ -532,7 +532,7 @@ const rawVideos = [
   {
     embedId: 'T4RHuXd5pMg',
     score: 85,
-    tags: ['японская', 'wagakki band', 'спокойная', 'жизнеутверждающая'],
+    tags: ['японская', 'wagakki band', 'спокойная', 'веселая'],
     description: null,
   },
   {
@@ -544,7 +544,7 @@ const rawVideos = [
   {
     embedId: '64AaAySNROY',
     score: 81,
-    tags: ['японская', 'спокойная', 'электронная', 'жизнеутверждающая'],
+    tags: ['японская', 'спокойная', 'электронная', 'веселая'],
     description: null,
   },
   {
@@ -556,7 +556,7 @@ const rawVideos = [
   {
     embedId: 'mi0qVkGwmSw',
     score: 78,
-    tags: ['японская', 'спокойная', 'жизнеутверждающая'],
+    tags: ['японская', 'спокойная', 'веселая'],
     description: null,
   },
   {
@@ -568,7 +568,7 @@ const rawVideos = [
   {
     embedId: 'K_xTet06SUo',
     score: 90,
-    tags: ['японская', 'wagakki band', 'активная', 'жизнеутверждающая'],
+    tags: ['японская', 'wagakki band', 'активная', 'веселая'],
     description: null,
   },
   {
@@ -580,7 +580,7 @@ const rawVideos = [
   {
     embedId: 'X_k9qpsDm34',
     score: 90,
-    tags: ['японская', 'спокойная', 'жизнеутверждающая'],
+    tags: ['японская', 'спокойная', 'веселая'],
     description: null,
   },
   {
@@ -598,7 +598,7 @@ const rawVideos = [
   {
     embedId: 'vgrogIrmMNk',
     score: 95,
-    tags: ['инструментальная', 'sky mubs', 'печальная', 'спокойная'],
+    tags: ['инструментальная', 'sky mubs', 'грустная', 'спокойная'],
     description: (
       <Description>
         Я плачу... <Emoji src={PepeHands} />
@@ -608,37 +608,37 @@ const rawVideos = [
   {
     embedId: 'kx5-VXpTeU8',
     score: 88,
-    tags: ['японская', 'вокалоид', 'жизнеутверждающая', 'активная'],
+    tags: ['японская', 'вокалоид', 'веселая', 'активная'],
     description: null,
   },
   {
     embedId: 'WQYN2P3E06s',
     score: 71,
-    tags: ['жизнеутверждающая', 'оркестровая'],
+    tags: ['веселая', 'оркестровая'],
     description: null,
   },
   {
     embedId: 'ceMVXr9puYk',
     score: 72,
-    tags: ['японская', 'жизнеутверждающая', 'активная'],
+    tags: ['японская', 'веселая', 'активная'],
     description: null,
   },
   {
     embedId: '2jGSRlXk8ag',
     score: 69,
-    tags: ['японская', 'жизнеутверждающая', 'активная'],
+    tags: ['японская', 'веселая', 'активная'],
     description: null,
   },
   {
     embedId: 'g-jGHbkM8e4',
     score: 68,
-    tags: ['инструментальная', 'спокойная', 'жизнеутверждающая', 'кельтская', 'оркестровая'],
+    tags: ['инструментальная', 'спокойная', 'веселая', 'кельтская', 'оркестровая'],
     description: null,
   },
   {
     embedId: 'OWmNcmXZwfs',
     score: 100,
-    tags: ['японская', 'kalafina', 'жизнеутверждающая', 'спокойная', 'yuki kajiura'],
+    tags: ['японская', 'kalafina', 'веселая', 'спокойная', 'yuki kajiura'],
     description: (
       <Description>
         Супер топ!
@@ -654,7 +654,7 @@ const rawVideos = [
   {
     embedId: '9ydC2pUQpNQ',
     score: 91,
-    tags: ['японская', 'спокойная', 'печальная'],
+    tags: ['японская', 'спокойная', 'грустная'],
     description: (
       <Description>
         Опенинг из <a target="_blank" href="https://shikimori.one/animes/2966-ookami-to-koushinryou">"Волчица и Пряности"</a>, 
@@ -677,7 +677,7 @@ const rawVideos = [
   {
     embedId: 'omsyef1qUvo',
     score: 73,
-    tags: ['японская', 'жизнеутверждающая', 'активная'],
+    tags: ['японская', 'веселая', 'активная'],
     description: null,
   },
   {
@@ -689,7 +689,7 @@ const rawVideos = [
   {
     embedId: 'Q2meWkWqc-I',
     score: 88,
-    tags: ['японская', 'wagakki band', 'активная', 'жизнеутверждающая'],
+    tags: ['японская', 'wagakki band', 'активная', 'веселая'],
     description: null,
   },
   {
@@ -739,19 +739,19 @@ const rawVideos = [
   {
     embedId: '-b8_89vlkaI',
     score: 78,
-    tags: ['инструментальная', 'спокойная', 'печальная'],
+    tags: ['инструментальная', 'спокойная', 'грустная'],
     description: null,
   },
   {
     embedId: 'QLxEBMjqxus',
     score: 68,
-    tags: ['инструментальная', 'спокойная', 'жизнеутверждающая'],
+    tags: ['инструментальная', 'спокойная', 'веселая'],
     description: null,
   },
   {
     embedId: 'nCaqf9WhqOY',
     score: 87,
-    tags: ['японская', 'вокалоид', 'спокойная', 'жизнеутверждающая'],
+    tags: ['японская', 'вокалоид', 'спокойная', 'веселая'],
     description: null,
   },
   {
@@ -763,7 +763,7 @@ const rawVideos = [
   {
     embedId: '8CNbrEBrAtA',
     score: 84,
-    tags: ['японская', 'жизнеутверждающая', 'активная'],
+    tags: ['японская', 'веселая', 'активная'],
     description: null,
   },
   {
@@ -793,7 +793,7 @@ const rawVideos = [
   {
     embedId: 'wjkhjFJbwrE',
     score: 82,
-    tags: ['японская', 'жизнеутверждающая', 'активная'],
+    tags: ['японская', 'веселая', 'активная'],
     description: null,
   },
   {
@@ -805,7 +805,7 @@ const rawVideos = [
   {
     embedId: 'sesKiKYQn84',
     score: 81,
-    tags: ['английская', 'жизнеутверждающая', 'активная'],
+    tags: ['английская', 'веселая', 'активная'],
     description: null,
   },
   {
@@ -835,7 +835,7 @@ const rawVideos = [
   {
     embedId: 'o6wtDPVkKqI',
     score: 90,
-    tags: ['японская', 'активная', 'жизнеутверждающая'],
+    tags: ['японская', 'активная', 'веселая'],
     description: (
       <Description>
         Полезай в робота.
@@ -845,7 +845,7 @@ const rawVideos = [
   {
     embedId: 'xCkEsQXFv4g',
     score: 96,
-    tags: ['русская', 'печальная', 'панк', 'элизиум', 'хочется петь'],
+    tags: ['русская', 'грустная', 'панк', 'элизиум', 'хочется петь'],
     description: (
       <Description>
         До слез... <Emoji src={PepeHands} />
@@ -873,25 +873,25 @@ const rawVideos = [
   {
     embedId: 'dOAMvCyXXQo',
     score: 90,
-    tags: ['японская', 'спокойная', 'жизнеутверждающая'],
+    tags: ['японская', 'спокойная', 'веселая'],
     description: null,
   },
   {
     embedId: 'o1iz4L-5zkQ',
     score: 88,
-    tags: ['японская', 'вокалоид', 'электронная', 'активная', 'жизнеутверждающая'],
+    tags: ['японская', 'вокалоид', 'электронная', 'активная', 'веселая'],
     description: null,
   },
   {
     embedId: 'eMzsG9t66rE',
     score: 88,
-    tags: ['японская', 'активная', 'жизнеутверждающая', 'рок'],
+    tags: ['японская', 'активная', 'веселая', 'рок'],
     description: null,
   },
   {
     embedId: 'az2Q7pjClYM',
     score: 80,
-    tags: ['японская', 'активная', 'жизнеутверждающая', 'рок'],
+    tags: ['японская', 'активная', 'веселая', 'рок'],
     description: null,
   },
   {
@@ -903,13 +903,13 @@ const rawVideos = [
   {
     embedId: 'GSMV-Rv7C1w',
     score: 82,
-    tags: ['японская', 'активная', 'жизнеутверждающая'],
+    tags: ['японская', 'активная', 'веселая'],
     description: null,
   },
   {
     embedId: 'WRQGQyrytYU',
     score: 80,
-    tags: ['английская', 'nomy', 'рок', 'жизнеутверждающая'],
+    tags: ['английская', 'nomy', 'рок', 'веселая'],
     description: null,
   },
   {
@@ -945,7 +945,7 @@ const rawVideos = [
   {
     embedId: '1_D7kiOR9fA',
     score: 85,
-    tags: ['японская', 'активная', 'жизнеутверждающая', 'рок'],
+    tags: ['японская', 'активная', 'веселая', 'рок'],
     description: null,
   },
   {
@@ -969,7 +969,7 @@ const rawVideos = [
   {
     embedId: 'u_xyg_s7gUA',
     score: 90,
-    tags: ['инструментальная', 'спокойная', 'жизнеутверждающая', 'классическая'],
+    tags: ['инструментальная', 'спокойная', 'веселая', 'классическая'],
     description: null,
   },
   {
@@ -985,7 +985,7 @@ const rawVideos = [
   {
     embedId: 'WIqrKvfEJos',
     score: 80,
-    tags: ['японская', 'активная', 'жизнеутверждающая'],
+    tags: ['японская', 'активная', 'веселая'],
     description: null,
   },
   {
@@ -997,7 +997,7 @@ const rawVideos = [
   {
     embedId: 'kZSmbObUzZA',
     score: 71,
-    tags: ['активная', 'жизнеутверждающая'],
+    tags: ['активная', 'веселая'],
     description: null,
   },
   {
@@ -1027,7 +1027,7 @@ const rawVideos = [
   {
     embedId: 'slVPS_VJqhs',
     score: 81,
-    tags: ['японская', 'akatsuki records', 'активная', 'жизнеутверждающая'],
+    tags: ['японская', 'akatsuki records', 'активная', 'веселая'],
     description: null,
   },
   {
@@ -1063,13 +1063,13 @@ const rawVideos = [
   {
     embedId: '61Elpj2DlnM',
     score: 78,
-    tags: ['инструментальная', 'печальная', 'спокойная'],
+    tags: ['инструментальная', 'грустная', 'спокойная'],
     description: null,
   },
   {
     embedId: 'GMcWGqm4rOQ',
     score: 80,
-    tags: ['японская', 'жизнеутверждающая', 'активная'],
+    tags: ['японская', 'веселая', 'активная'],
     description: null,
   },
   {
@@ -1087,7 +1087,7 @@ const rawVideos = [
   {
     embedId: 'Cdsqx-djRH0',
     score: 81,
-    tags: ['русская', 'рок', 'активная', 'жизнеутверждающая'],
+    tags: ['русская', 'рок', 'активная', 'веселая'],
     description: null,
   },
   {
@@ -1099,13 +1099,13 @@ const rawVideos = [
   {
     embedId: 'XhrRGi8PUHs',
     score: 85,
-    tags: ['русская', 'егор летов', 'панк', 'спокойная', 'печальная'],
+    tags: ['русская', 'егор летов', 'панк', 'спокойная', 'грустная'],
     description: null,
   },
   {
     embedId: 'osBPrU0k21s',
     score: 60,
-    tags: ['русская', 'активная', 'жизнеутверждающая'],
+    tags: ['русская', 'активная', 'веселая'],
     description: null,
   },
   {
@@ -1123,13 +1123,13 @@ const rawVideos = [
   {
     embedId: 'X9Cb5nF92F4',
     score: 87,
-    tags: ['японская', 'рок', 'активная', 'жизнеутверждающая'],
+    tags: ['японская', 'рок', 'активная', 'веселая'],
     description: null,
   },
   {
     embedId: 'cLBFxJmKsKg',
     score: 79,
-    tags: ['английская', 'спокойная', 'печальная'],
+    tags: ['английская', 'спокойная', 'грустная'],
     description: null,
   },
   {
@@ -1141,19 +1141,19 @@ const rawVideos = [
   {
     embedId: '8_opWKYPnHs',
     score: 83,
-    tags: ['английская', 'спокойная', 'печальная', 'хочется петь'],
+    tags: ['английская', 'спокойная', 'грустная', 'хочется петь'],
     description: null,
   },
   {
     embedId: 'X6U_4DjgMao',
     score: 98,
-    tags: ['английская', 'twilight force', 'рок', 'активная', 'жизнеутверждающая', 'хочется петь'],
+    tags: ['английская', 'twilight force', 'рок', 'активная', 'веселая', 'хочется петь'],
     description: null,
   },
   {
     embedId: 'vZ-FJXQK554',
     score: 91,
-    tags: ['английская', 'twilight force', 'рок', 'активная', 'жизнеутверждающая', 'хочется петь'],
+    tags: ['английская', 'twilight force', 'рок', 'активная', 'веселая', 'хочется петь'],
     description: null,
   },
   {
@@ -1195,7 +1195,7 @@ const rawVideos = [
   {
     embedId: '1vrEljMfXYo',
     score: 84,
-    tags: ['английская', 'хочется петь', 'жизнеутверждающая', 'спокойная'],
+    tags: ['английская', 'хочется петь', 'веселая', 'спокойная'],
     description: null,
   },
   {
@@ -1213,19 +1213,19 @@ const rawVideos = [
   {
     embedId: 'gnqXfK-ESoY',
     score: 84,
-    tags: ['русская', 'хочется петь', 'рок', 'жизнеутверждающая'],
+    tags: ['русская', 'хочется петь', 'рок', 'веселая'],
     description: null,
   },
   {
     embedId: '5GbSKaFf8Uc',
     score: 87,
-    tags: ['русская', 'панк', 'порнофильмы', 'печальная', 'хочется петь'],
+    tags: ['русская', 'панк', 'порнофильмы', 'грустная', 'хочется петь'],
     description: null,
   },
   {
     embedId: 'C056vtZdQKc',
     score: 79,
-    tags: ['русская', 'элизиум', 'панк', 'хочется петь', 'жизнеутверждающая'],
+    tags: ['русская', 'элизиум', 'панк', 'хочется петь', 'веселая'],
     description: null,
   },
   {
@@ -1237,7 +1237,7 @@ const rawVideos = [
   {
     embedId: 'iFnLGhDSJpw',
     score: 78,
-    tags: ['инструментальная', 'печальная', 'спокойная'],
+    tags: ['инструментальная', 'грустная', 'спокойная'],
     description: null,
   },
   {
@@ -1255,7 +1255,7 @@ const rawVideos = [
   {
     embedId: 'MNmLn6a-jqw',
     score: 87,
-    tags: ['английская', 'жизнеутверждающая', 'активная', 'хочется петь'],
+    tags: ['английская', 'веселая', 'активная', 'хочется петь'],
     description: null,
   },
   {
@@ -1267,13 +1267,13 @@ const rawVideos = [
   {
     embedId: 'LPRO3EzMQv0',
     score: 91,
-    tags: ['инструментальная', 'активная', 'жизнеутверждающая'],
+    tags: ['инструментальная', 'активная', 'веселая'],
     description: null,
   },
   {
     embedId: 'LpheaI374Ic',
     score: 50,
-    tags: ['инструментальная', 'печальная', 'спокойная', 'классическая'],
+    tags: ['инструментальная', 'грустная', 'спокойная', 'классическая'],
     description: null,
   },
   {
@@ -1285,13 +1285,13 @@ const rawVideos = [
   {
     embedId: 'iJ4f2UfLyoU',
     score: 72,
-    tags: ['японская', 'активная', 'жизнеутверждающая'],
+    tags: ['японская', 'активная', 'веселая'],
     description: null,
   },
   {
     embedId: 'GZLuk3SK-3k',
     score: 70,
-    tags: ['русская', 'егор летов', 'панк', 'активная', 'печальная'],
+    tags: ['русская', 'егор летов', 'панк', 'активная', 'грустная'],
     description: null,
   },
   {
@@ -1315,67 +1315,67 @@ const rawVideos = [
   {
     embedId: 'Lcr5Mc6dGxI',
     score: 89,
-    tags: ['английская', 'рок', 'жизнеутверждающая', 'активная', 'twilight force'],
+    tags: ['английская', 'рок', 'веселая', 'активная', 'twilight force'],
     description: null,
   },
   {
     embedId: 'O4irXQhgMqg',
     score: 77,
-    tags: ['английская', 'печальная', 'спокойная', 'рок'],
+    tags: ['английская', 'грустная', 'спокойная', 'рок'],
     description: null,
   },
   {
     embedId: 'mTCESSzPZSw',
     score: 80,
-    tags: ['японская', 'активная', 'жизнеутверждающая'],
+    tags: ['японская', 'активная', 'веселая'],
     description: null,
   },
   {
     embedId: 'apRLsd4W6gM',
     score: 87,
-    tags: ['японская', 'rigël theatre', 'спокойная', 'жизнеутверждающая', 'кельтская'],
+    tags: ['японская', 'rigël theatre', 'спокойная', 'веселая', 'кельтская'],
     description: null,
   },
   {
     embedId: 'uifv1yxYcOU',
     score: 86,
-    tags: ['японская', 'rigël theatre', 'спокойная', 'жизнеутверждающая'],
+    tags: ['японская', 'rigël theatre', 'спокойная', 'веселая'],
     description: null,
   },
   {
     embedId: 'm9RW5DYNrvU',
     score: 84,
-    tags: ['инструментальная', 'rigël theatre', 'активная', 'жизнеутверждающая', 'кельтская'],
+    tags: ['инструментальная', 'rigël theatre', 'активная', 'веселая', 'кельтская'],
     description: null,
   },
   {
     embedId: 'bYjaufqKT6E',
     score: 89,
-    tags: ['русская', 'егор летов', 'панк', 'печальная', 'спокойная', 'хочется петь'],
+    tags: ['русская', 'егор летов', 'панк', 'грустная', 'спокойная', 'хочется петь'],
     description: null,
   },
   {
     embedId: 'bTkIdiG0QmQ',
     score: 78,
-    tags: ['русская', 'егор летов', 'панк', 'печальная', 'спокойная'],
+    tags: ['русская', 'егор летов', 'панк', 'грустная', 'спокойная'],
     description: null,
   },
   {
     embedId: 'jP9JIBG0SZ8',
     score: 81,
-    tags: ['русская', 'егор летов', 'панк', 'печальная', 'спокойная'],
+    tags: ['русская', 'егор летов', 'панк', 'грустная', 'спокойная'],
     description: null,
   },
   {
     embedId: '6CSTPhPrTuQ',
     score: 89,
-    tags: ['русская', 'егор летов', 'панк', 'хочется петь', 'печальная', 'спокойная'],
+    tags: ['русская', 'егор летов', 'панк', 'хочется петь', 'грустная', 'спокойная'],
     description: null,
   },
   {
     embedId: 'uXq_Le2Awxk',
     score: 87,
-    tags: ['русская', 'элизиум', 'панк', 'хочется петь', 'печальная', 'активная'],
+    tags: ['русская', 'элизиум', 'панк', 'хочется петь', 'грустная', 'активная'],
     description: null,
   },
   {
@@ -1393,7 +1393,7 @@ const rawVideos = [
   {
     embedId: '250rS-RvwlU',
     score: 59,
-    tags: ['инструментальная', 'phyxinon', 'спокойная', 'печальная'],
+    tags: ['инструментальная', 'phyxinon', 'спокойная', 'грустная'],
     description: null,
   },
   {
@@ -1411,25 +1411,25 @@ const rawVideos = [
   {
     embedId: 'V3OPDTwH9os',
     score: 86,
-    tags: ['английская', 'активная', 'жизнеутверждающая'],
+    tags: ['английская', 'активная', 'веселая'],
     description: null,
   },
   {
     embedId: 'RtTYQuO1j6w',
     score: 75,
-    tags: ['японская', 'akatsuki records', 'жизнеутверждающая'],
+    tags: ['японская', 'akatsuki records', 'веселая'],
     description: null,
   },
   {
     embedId: '3GSY_jRiOdw',
     score: 76,
-    tags: ['японская', 'жизнеутверждающая', 'активная'],
+    tags: ['японская', 'веселая', 'активная'],
     description: null,
   },
   {
     embedId: '5nwEfGzbRok',
     score: 65,
-    tags: ['английская', 'рок', 'печальная'],
+    tags: ['английская', 'рок', 'грустная'],
     description: null,
   },
   {
