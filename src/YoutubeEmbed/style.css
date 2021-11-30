@@ -28,7 +28,6 @@ iframe {
     position: absolute;
     width: 100%;
     height: 100%;
-    transition: all 0.25s cubic-bezier(0, 0, 0.2, 1);
 }
 
 .youtube-player::after {
@@ -42,12 +41,14 @@ iframe {
 }
 
 .youtube-player:hover img {
+    transition: all 0.25s cubic-bezier(0, 0, 0.2, 1);
     filter: brightness(85%);
 }
 
 .youtube-player:hover > button path:first-child {
     fill: red;
     fill-opacity: 1;
+    transition: all 0.25s cubic-bezier(0,0,0.2,1);
 }
 
 .youtube-player > div {
@@ -81,5 +82,4 @@ iframe {
     cursor: inherit;
     fill: #212121;
     fill-opacity: .8;
-    transition: all 0.25s cubic-bezier(0,0,0.2,1);
 }
