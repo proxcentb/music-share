@@ -100,8 +100,10 @@ export default function App() {
     return <Tag {...tag} key={name} tagState={tags[name]} onClick={onClick} onContextMenu={onContextMenu} />;
   }, [cycleTagState, tags]);
 
-  useDidMountEffect(() => setPage(1), [tags]);
-  useEffect(() => setTimeout(() => window.scrollTo(0, 0), 50), [])
+  useDidMountEffect(() => setPage(1), [JSON.stringify(videosToDisplay.map(video => video.embedId))]);
+  
+  // hack to scroll to top on page load
+  useEffect(() => setTimeout(() => window.scrollTo(0, 0), 50), []);
 
   return (
     <div className="app">
