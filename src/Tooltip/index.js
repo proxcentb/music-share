@@ -1,9 +1,10 @@
 import './style.css';
-import {useRef, useState, useEffect, useCallback} from "preact/hooks";
+import { useRef, useState, useEffect, useCallback } from "preact/hooks";
+import { useBoolean } from "../hooks";
 
 const WithTooltip = ({ content, children }) => {
-  const [active, setActive] = useState(false);
-  const [positionSet, setPositionSet] = useState(false);
+  const { boolean: active, setFalse: setActiveFalse, setTrue: setActiveTrue } = useBoolean(false);
+  const { boolean: positionSet, setFalse: setPositionSetFalse, setTrue: setPositionSetTrue } = useBoolean(false);
   const [timeoutId, setTimeoutId] = useState(null);
   const parentRef = useRef(null);
   const ref = useRef(null);
@@ -22,8 +23,8 @@ const WithTooltip = ({ content, children }) => {
     left >= innerWidth - right
       ? tooltip.style.right = '0'
       : tooltip.style.left = '0';
-    
-    setPositionSet(true);
+
+    setPositionSetTrue();
   }, []);
   
   const startTimeout = useCallback(() => {
@@ -37,21 +38,27 @@ const WithTooltip = ({ content, children }) => {
       setTimeoutId(null);
     }
   }, [timeoutId]);
-  
+
   useEffect(() => {
     if (active) startTimeout();
     else {
       stopTimeout();
-      setPositionSet(false);
+      setPositionSetFalse();
     }
   }, [active]);
   
   useEffect(() => {
-    const parent = parentRef.current;
-    parent.addEventListener('mouseenter', () => setActive(true));
-    parent.addEventListener('touchstart', () => setActive(true));
-    parent.addEventListener('mouseleave', () => setActive(false))
-    parent.addEventListener('touchend', () => setActive(false))
+    const parentNode = parentRef.current;
+    parentNode.addEventListener('mouseenter', setActiveTrue);
+    parentNode.addEventListener('touchstart', setActiveTrue);
+    parentNode.addEventListener('mouseleave', setActiveFalse);
+    parentNode.addEventListener('touchend', setActiveFalse);
+    return () => {
+      parentNode.removeEventListener('touchstart', setActiveTrue);
+      parentNode.removeEventListener('mouseenter', setActiveTrue);
+      parentNode.removeEventListener('mouseleave', setActiveFalse);
+      parentNode.removeEventListener('touchend', setActiveFalse);
+    };
   }, []);
 
   return (

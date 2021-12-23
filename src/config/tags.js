@@ -15,7 +15,7 @@ import Trollge from '../assets/emojis/Trollge.png';
 
 const rawTags = [
   {
-    name: 'ⓘ',
+    id: 'ⓘ',
     description: (
       <Description>
         У этих видео я оставил небольшие заметки.
@@ -23,7 +23,7 @@ const rawTags = [
     ),
   },
   {
-    name: 'инструментальная',
+    id: 'инструментальная',
     description: (
       <Description>
         Музыка без слов или акцент на них очень мал. Таких у меня много.
@@ -31,7 +31,7 @@ const rawTags = [
     ),
   },
   {
-    name: 'японская',
+    id: 'японская',
     description: (
       <Description>
         Музыка с японскими словами, чаще всего из аниме или osu! узнал, но не всегда.
@@ -39,7 +39,7 @@ const rawTags = [
     ),
   },
   {
-    name: 'английская',
+    id: 'английская',
     description: (
       <Description>
         Музыка с английскими словами, чаще всего просто случайно натыкаюсь на нее.
@@ -47,7 +47,7 @@ const rawTags = [
     ),
   },
   {
-    name: 'русская',
+    id: 'русская',
     description: (
       <Description>
         Музыка с русскими словами, не так давно начал находить крутые песни.
@@ -55,7 +55,7 @@ const rawTags = [
     ),
   },
   {
-    name: 'караоке',
+    id: 'караоке',
     description: (
       <Description>
         С друзьями иногда в караоке ходим, это подборка для меня. <br /> <Emoji src={FeelsAmazingMan} />
@@ -63,7 +63,7 @@ const rawTags = [
     ),
   },
   {
-    name: 'грустная',
+    id: 'грустная',
     description: (
       <Description>
         Усугубляет тоску... <br /> <Emoji src={FeelsHangMan} />
@@ -71,7 +71,7 @@ const rawTags = [
     ),
   },
   {
-    name: 'веселая',
+    id: 'веселая',
     description: (
       <Description>
         Поднимает настроение! <br /> <Emoji src={FeelsOkayMan} />
@@ -79,7 +79,7 @@ const rawTags = [
     ),
   },
   {
-    name: 'спокойная',
+    id: 'спокойная',
     description: (
       <Description>
         Нередко охота послушать что-то спокойное, чтобы расслабиться.
@@ -87,7 +87,7 @@ const rawTags = [
     ),
   },
   {
-    name: 'активная',
+    id: 'активная',
     description: (
       <Description>
         Часто хочется слушать подобное; больше энергии появляется! <br /> <Emoji src={SwoleDoge} />
@@ -95,7 +95,7 @@ const rawTags = [
     ),
   },
   {
-    name: 'вокалоид',
+    id: 'вокалоид',
     description: (
       <Description>
         Песенки миленькие, как и персонажи. <br /> <Emoji src={AYAYA} />
@@ -103,7 +103,7 @@ const rawTags = [
     ),
   },
   {
-    name: 'рок',
+    id: 'рок',
     description: (
       <Description>
         Рок. Много рока.
@@ -111,7 +111,7 @@ const rawTags = [
     ),
   },
   {
-    name: 'панк',
+    id: 'панк',
     description: (
       <Description>
         Друг подсадил... <br /> <Emoji src={wojakWithered} />
@@ -119,7 +119,7 @@ const rawTags = [
     ),
   },
   {
-    name: 'метал',
+    id: 'метал',
     description: (
       <Description>
         Мало таких треков, в основном это мелодичный метал.
@@ -127,7 +127,7 @@ const rawTags = [
     ),
   },
   {
-    name: 'электронная',
+    id: 'электронная',
     description: (
       <Description>
         Скорее всего долбежка. <br /> <Emoji src={ChadYes} />
@@ -135,7 +135,7 @@ const rawTags = [
     ),
   },
   {
-    name: 'хардкор/спидкор',
+    id: 'хардкор/спидкор',
     description: (
       <Description>
         Скорее всего <b>нереальная</b> долбежка. <br /> <Emoji src={ChadYes} />
@@ -143,7 +143,7 @@ const rawTags = [
     ),
   },
   {
-    name: 'кельтская',
+    id: 'кельтская',
     description: (
       <Description>
         Скрипка, флейта, барабаны, волынка, арфа... Очень приятно для слуха. <br /> <Emoji src={FeelsOkayMan} />
@@ -151,7 +151,7 @@ const rawTags = [
     ),
   },
   {
-    name: 'оркестровая',
+    id: 'оркестровая',
     description: (
       <Description>
         В основном эпическая. 
@@ -159,7 +159,7 @@ const rawTags = [
     ),
   },
   {
-    name: 'классическая',
+    id: 'классическая',
     description: (
       <Description>
         Здесь я имею ввиду не только классику, но и музыку, похожую на нее. <br /> <Emoji src={EZY} />
@@ -167,7 +167,7 @@ const rawTags = [
     ),
   },
   {
-    name: 'xi',
+    id: 'xi',
     description: (
       <Description>
         Автор электронной музыки, очень нравится его стиль, узнал из osu! о нем.
@@ -175,7 +175,7 @@ const rawTags = [
     ),
   },
   {
-    name: 'ICCD',
+    id: 'ICCD',
     description: (
       <Description>
         Imperial Circus Dead Decadence. Метал группа. <br /> <Emoji src={monkaMEGA} />
@@ -183,7 +183,7 @@ const rawTags = [
     ),
   },
   {
-    name: 'akatsuki records',
+    id: 'akatsuki records',
     description: (
       <Description>
         Японская группа, необычный голос у вокалистки. <br /> <Emoji src={roflanEbalo} />
@@ -191,7 +191,7 @@ const rawTags = [
     ),
   },
   {
-    name: 'phyxinon',
+    id: 'phyxinon',
     description: (
       <Description>
         Чел круто на фортепиано играет!
@@ -199,7 +199,7 @@ const rawTags = [
     ),
   },
   {
-    name: 'kalafina',
+    id: 'kalafina',
     description: (
       <Description>
         Уже распавшаяся японская группа, основанная Юки Кадзиурой. Очень много их треков мне нравится.
@@ -207,7 +207,7 @@ const rawTags = [
     ),
   },
   {
-    name: 'love solfege',
+    id: 'love solfege',
     description: (
       <Description>
         Уникальный стиль. Очень круто! <br /> <Emoji src={peepoGlad} />
@@ -215,7 +215,7 @@ const rawTags = [
     ),
   },
   {
-    name: 'yousei teikoku',
+    id: 'yousei teikoku',
     description: (
       <Description>
         Японский рок.
@@ -223,7 +223,7 @@ const rawTags = [
     ),
   },
   {
-    name: 'yuki kajiura',
+    id: 'yuki kajiura',
     description: (
       <Description>
         Музыкант и композитор, много ее треков мне нравятся.
@@ -231,7 +231,7 @@ const rawTags = [
     ),
   },
   {
-    name: 'nomy',
+    id: 'nomy',
     description: (
       <Description>
         Группа, состоящая из одного человека.
@@ -239,7 +239,7 @@ const rawTags = [
     ),
   },
   {
-    name: 'rigël theatre',
+    id: 'rigël theatre',
     description: (
       <Description>
         Очень приятный голос и мелодия! Одна из моих самых любимых групп.
@@ -247,7 +247,7 @@ const rawTags = [
     ),
   },
   {
-    name: 'wagakki band',
+    id: 'wagakki band',
     description: (
       <Description>
         Японский фолк-рок.
@@ -255,7 +255,7 @@ const rawTags = [
     ),
   },
   {
-    name: 'sky mubs',
+    id: 'sky mubs',
     description: (
       <Description>
         Композитор, создающий эпичную музыку.
@@ -263,7 +263,7 @@ const rawTags = [
     ),
   },
   {
-    name: 'infected mushrooms',
+    id: 'infected mushrooms',
     description: (
       <Description>
         Необычное звучание в их треках, запоминается!
@@ -271,7 +271,7 @@ const rawTags = [
     ),
   },
   {
-    name: 'элизиум',
+    id: 'элизиум',
     description: (
       <Description>
         Русская панк-рок группа, очень много крутых треков.
@@ -279,7 +279,7 @@ const rawTags = [
     ),
   },
   {
-    name: 'король и шут',
+    id: 'король и шут',
     description: (
       <Description>
         <Emoji src={Trollge} />
@@ -287,7 +287,7 @@ const rawTags = [
     ),
   },
   {
-    name: 'егор летов',
+    id: 'егор летов',
     description: (
       <Description>
         <Emoji src={TrollDespair} />
@@ -295,7 +295,7 @@ const rawTags = [
     ),
   },
   {
-    name: 'twilight force',
+    id: 'twilight force',
     description: (
       <Description>
         Очень приятная рок музыка!
@@ -303,7 +303,7 @@ const rawTags = [
     ),
   },
   {
-    name: 'mittsies',
+    id: 'mittsies',
     description: (
       <Description>
         Узнал из Helltaker о нем, очень хорошая электронная музыка! 
@@ -311,7 +311,7 @@ const rawTags = [
     ),
   },
   {
-    name: 'порнофильмы',
+    id: 'порнофильмы',
     description: (
       <Description>
         Русская панк-рок группа, очень много крутых треков.
@@ -339,5 +339,35 @@ export const getModifiedTag = (tag) => {
 }
 
 export const tags = rawTags.map(getModifiedTag);
-export const tagNames = tags.map(tag => tag.name);
-export const getTagByName = (tagName) => tags.find(tag => tag.name === tagName);
+
+export const allTagsIds = tags.map(tag => tag.id);
+export const getTagById = id => tags.find(tag => tag.id === id);
+
+export const exampleTags = [
+  {
+    id: 'активное',
+    tagState: true,
+    description: (
+      <Description>
+        Только видео с этим тегом будут появляться.
+      </Description>
+    ),
+  },
+  {
+    id: 'неактивное',
+    tagState: false,
+    description: (
+      <Description>
+        Все видео с такими тегом не будут появляться.
+      </Description>
+    ),
+  },
+  {
+    id: 'нейтральное',
+    description: (
+      <Description>
+        Изначальное состояние, не влияет на что-либо.
+      </Description>
+    ),
+  },
+].map(getModifiedTag);

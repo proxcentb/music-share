@@ -19,6 +19,8 @@
     border-radius: 3px;
     opacity: 0;
     z-index: -1;
+    font-size: 14px;
+    line-height: normal;
 }
 
 .with-tooltip .active {

@@ -1,0 +1,29 @@
+.app > .tags {
+    margin: 3px 5px;
+}
+
+.app > .tags .tag {
+    margin-right: 3px;
+    margin-bottom: 3px;
+}
+
+.tag {
+    cursor: pointer;
+    color: white;
+    display: inline-block;
+    padding: 4px 10px;
+    user-select: none;
+    transition: 0.4s;
+}
+
+.tag.selected {
+    box-shadow: 0 0 0 1px #ffffff inset, 0 0 5px 2px #ffffff;
+    background-color: rgb(230, 230, 230);
+    color: black;
+}
+
+.tag.deselected {
+    box-shadow: 0 0 0 1px rgb(60, 60, 60) inset, 0 0 5px 2px rgb(60, 60, 60);
+    background-color: black;    
+    color: grey;
+}

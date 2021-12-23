@@ -1,0 +1,21 @@
+.navigation {
+    align-self: center;
+    margin: 3px 5px;
+}
+
+.navigation button {
+    border-radius: 50%;
+    width: 30px;
+    font-size: 12px;
+    height: 30px;
+    margin: 4px;
+    background: rgb(230, 230, 230);
+    color: grey;
+    border: 1px solid;
+    cursor: pointer;
+}
+
+.navigation button:hover, .navigation button.active {
+    filter: brightness(0.8);
+    transition: 0.3s;
+}

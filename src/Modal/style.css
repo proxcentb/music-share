@@ -1,0 +1,82 @@
+.modal {
+    font-size: 17px;
+    text-align: justify;
+    color: white;
+    flex-direction: column;
+    position: absolute;
+    z-index: 3;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal button {
+    font-size: 17px;
+    padding: 6px;
+    background-color: #FCFCFD;
+    border-radius: 4px;
+    border-width: 0;
+    box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #d6d6e7 0 -3px 0 inset;
+    cursor: pointer;
+}
+
+.modal button:hover {
+    box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+}
+
+.modal button:active {
+    box-shadow: #D6D6E7 0 3px 7px inset;
+    transform: translateY(1px);
+}
+
+.modal > div {
+    display: flex;
+    justify-content: space-evenly;
+    width: 600px;
+    margin: 10px;
+}
+
+.modal ol {
+    margin: 0;
+}
+
+.modal ol li {
+    line-height: 30px;
+    margin: 5px;
+}
+
+.modal ol .tag {
+    display: inline;
+}
+
+@media screen and (max-width: 600px) {
+    .modal ol {
+        padding: 0 20px;
+        font-size: 14px;
+    }
+    
+    .modal ol li {
+        line-height: 20px;
+        display: none;
+    }
+
+    .modal div {
+        display: flex;
+        justify-content: space-evenly;
+        width: 100%;
+        margin: 10px;
+    }
+    
+    .modal div button {
+        margin: 5px;
+        display: none;
+    }
+    
+    .modal button {
+        font-size: 14px;
+    }
+}
