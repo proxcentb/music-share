@@ -1,4 +1,4 @@
-import { Emoji, Description } from './helpers';
+import { Emoji, Description, getRandomColor } from './helpers';
 import FeelsAmazingMan from '../assets/emojis/FeelsAmazingMan.png';
 import FeelsHangMan from '../assets/emojis/FeelsHangMan.png';
 import FeelsOkayMan from '../assets/emojis/FeelsOkayMan.png';
@@ -12,6 +12,17 @@ import roflanEbalo from '../assets/emojis/roflanEbalo.png';
 import peepoGlad from '../assets/emojis/peepoGlad.png';
 import TrollDespair from '../assets/emojis/TrollDespair.png';
 import Trollge from '../assets/emojis/Trollge.png';
+
+export const getModifiedTag = (tag) => {
+  const { color, ...restProps } = tag;
+  return {
+    ...restProps,
+    style: restProps.style ?? {
+      color: 'white',
+      backgroundColor: getRandomColor(),
+    },
+  };
+}
 
 const rawTags = [
   {
@@ -320,54 +331,36 @@ const rawTags = [
   },
 ];
 
-const random = (() => {
-  let counter = 1;
-  return () => (Math.cos(++counter * 17) + Math.sin(++counter * 4) + 2) / 4;
-})()
-
-const getRandomColor = () => `rgb(${[random(), random(), random()].map(v => Math.floor(v * 175 + 40)).join(', ')})`;
-
-export const getModifiedTag = (tag) => {
-  const { color, ...restProps } = tag;
-  return {
-    ...restProps,
-    style: restProps.style ?? {
-      color: 'white',
-      backgroundColor: getRandomColor(),
-    },
-  };
-}
-
-export const tags = rawTags.map(getModifiedTag);
-
-export const allTagsIds = tags.map(tag => tag.id);
-export const getTagById = id => tags.find(tag => tag.id === id);
-
 export const exampleTags = [
   {
     id: 'активное',
     tagState: true,
     description: (
-      <Description>
-        Только видео с этим тегом будут появляться.
-      </Description>
+        <Description>
+          Только видео с этим тегом будут появляться.
+        </Description>
     ),
   },
   {
     id: 'неактивное',
     tagState: false,
     description: (
-      <Description>
-        Все видео с такими тегом не будут появляться.
-      </Description>
+        <Description>
+          Все видео с такими тегом не будут появляться.
+        </Description>
     ),
   },
   {
     id: 'нейтральное',
     description: (
-      <Description>
-        Изначальное состояние, не влияет на что-либо.
-      </Description>
+        <Description>
+          Изначальное состояние, не влияет на что-либо.
+        </Description>
     ),
   },
 ].map(getModifiedTag);
+
+export const tags = rawTags.map(getModifiedTag);
+
+export const allTagsIds = tags.map(tag => tag.id);
+export const getTagById = id => tags.find(tag => tag.id === id);

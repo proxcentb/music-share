@@ -14,6 +14,14 @@ body {
     height: 100%;
 }
 
+a:link {
+    color: #ec94c0;
+}
+
+a:visited {
+    color: #e5a95c;
+}
+
 .app {
     position: relative;
     background-image: url("./assets/bg-texture.png");
@@ -46,10 +54,6 @@ body {
 
 .description {
     max-width: 200px;
-}
-
-a:link {
-    color: #6ea3ff;
 }
 
 .above-all {

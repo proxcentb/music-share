@@ -21,7 +21,7 @@ const App = memo(() => {
   useDidMountEffect(() => page !== 1 && setPage(1), [JSON.stringify(videosIdsToDisplay)]);
   
   // hack to scroll to top on page load
-  useEffect(() => setTimeout(() => window.scrollTo(0, 0), 50), []);
+  useEffect(() => setTimeout(() => window.scrollTo(0, 0), 100), []);
 
   return (
     <div className="app">
