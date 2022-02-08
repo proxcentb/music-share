@@ -1,4 +1,5 @@
 .videos {
+    flex-grow: 1;
     display: grid;
     justify-items: center;
     grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
@@ -9,7 +10,7 @@
     padding: 3px;
     box-sizing: border-box;
     width: 100%;
-    height: 280px;
+    height: 100%;
     display: flex;
     flex-direction: column;
     opacity: 0;
@@ -26,8 +27,8 @@
 }
 
 .videos .video-wrapper .tags .tag {
-    margin-top: 3px;
-    margin-right: 3px;
+    margin-top: 2px;
+    margin-right: 2px;
 }
 
 @media screen and (max-width: 400px) {
